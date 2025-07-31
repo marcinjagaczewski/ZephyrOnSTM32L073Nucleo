@@ -81,7 +81,7 @@ K_THREAD_STACK_DEFINE(log_stack, STACK_SIZE);
 static struct k_thread led_thread_data;
 static struct k_thread log_thread_data;
 
-void main(void)
+int main(void)
 {
     // Konfiguracja przycisku z przerwaniem
     gpio_pin_configure_dt(&button, GPIO_INPUT);
@@ -101,4 +101,6 @@ void main(void)
                     PRIORITY, 0, K_NO_WAIT);
 
     LOG_INF("Wątki zostały uruchomione");
+
+    return 0;
 }
