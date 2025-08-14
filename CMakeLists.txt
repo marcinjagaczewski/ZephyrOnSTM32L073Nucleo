@@ -11,6 +11,8 @@ target_link_libraries(app PRIVATE stdc++)
 
 target_sources(app PRIVATE 
     src/main.cpp 
+    src/gpio.cpp 
+    src/threads.cpp
 )
 target_compile_options(app PRIVATE
     $<$<COMPILE_LANGUAGE:CXX>:-fpermissive>
